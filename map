@@ -1,0 +1,7 @@
+ 	 	 	 	FindShipWrack
+ 	 	 	 	ScorpionsTerritory
+EmptyBox			TreasureBox 	EmptyBox
+DevilReefCarbTerritory 	 	EmptyBox     DevilReefCarbTerritory  CrocodileTerritory
+ScorpionsTerritory	 FoodBox	SnakeTerritory   Hammer   EmptyBox
+TreasureBox	 ShovelBox 	StartingArea	CrocodileTerritory	KnifeBox
+ ScorpionsTerritory      TreasureBox     FoodBox    ShovelBox  EmptyBox
