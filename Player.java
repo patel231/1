@@ -10,9 +10,11 @@ public class Player implements Comparable<Player>{
 
     int hp;
     private int foodLevel;
-    private EnemyTerritory currentRoom;
     String name;
-    public int compareTo (Player othrPlyr) { return othrPlyr.score.compareTo(this.score); }
+    private EnemyTerritory currentRoom;
+    private Food food;
+    public int compareTo (Player othrPlyr)
+    { return othrPlyr.score.compareTo(this.score); }
     public String getName () { return name; }
 
     public void setName (String name) { this.name = name; }
@@ -45,7 +47,9 @@ public class Player implements Comparable<Player>{
 
 
     public Player() {
-        // TODO Auto-generated constructor stub
+
+            food = new Food("none",100);
+
     }
     public boolean is_alive(){return (hp > 0);}
 
@@ -200,11 +204,38 @@ public class Player implements Comparable<Player>{
             attackEnemy(kwargs);
         }
     }
-    public void escape_cave() {
+
+    public void findShipWrack() {
         System.out.println("Congratulations! You have escaped the cave!");
         System.exit(0);
     }
     public void addWeapon(Weapon weapon) {
 
+    }
+
+
+    public void move(String direction) {
+        // code for moving to a new room
+
+        // reduce nutrition when moving to a new territory
+        food.reduceNutrition(10);
+
+        // check if player is still alive
+        if (food.getNutrition() == 0) {
+            System.out.println("You have died of starvation.");
+            System.exit(0);
+        }
+    }
+
+    public void findFood() {
+        // code for finding food
+
+        // increase nutrition when finding food
+        food.increaseNutrition(20);
+    }
+
+    // getter for food
+    public Food getFood() {
+        return food;
     }
 }
