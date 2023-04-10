@@ -9,8 +9,24 @@ public class Food extends Item {
         this.nutrition = nutrition;
     }
 
-    // Methods
+    public Food() {
+        super();
+        nutrition = 100;
+    }
 
+    public void reduceNutrition(int amount) {
+        nutrition -= amount;
+        if (nutrition < 0) {
+            nutrition = 0;
+        }
+    }
+
+    public void increaseNutrition(int amount) {
+        nutrition += amount;
+        if (nutrition > 100) {
+            nutrition = 100;
+        }
+    }
 
     // Getters and setters
     public String getName() {
